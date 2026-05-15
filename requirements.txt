@@ -1,0 +1,13 @@
+easyocr
+pytesseract
+paddlepaddle
+paddleocr
+opencv-python
+numpy
+pandas
+matplotlib
+seaborn
+jiwer
+scikit-learn
+python-Levenshtein
+tqdm
