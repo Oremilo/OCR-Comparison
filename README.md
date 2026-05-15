@@ -16,6 +16,40 @@ A professional-grade OCR benchmarking pipeline designed to evaluate and compare 
 *   **Text Normalization:** Preprocesses both Ground Truth and Predicted texts to ensure fair comparisons.
 *   **Analytics & Visualization:** Automatically generates comprehensive CSV reports and comparison plots (e.g., bar charts for accuracy and inference time).
 
+## Benchmark Results and Discussion
+
+Based on the comprehensive OCR benchmarking over the SROIE 2019 dataset, the following key insights were observed:
+
+- Model **EasyOCR** achieved the highest Character Accuracy at 78.22% and Word Accuracy at 44.45%.
+- Model **EasyOCR** produced the highest F1-score (0.310), indicating the best balance between precision and recall.
+- Models **PaddleOCR** and **Tesseract** achieved exceptionally low scores (<5%), suggesting missing underlying dependencies (like Tesseract binaries) or models failing to initialize properly in this local environment.
+
+The Accuracy metrics (Character and Word Accuracy) measure exact match rates, while Error Rates (CER and WER) quantify the edit distance needed to correct the predicted text. Precision, Recall, and F1-score are calculated using a Bag-of-Words approach to measure the engines' ability to retrieve the correct vocabulary regardless of ordering. 
+
+### Visualizations
+
+The pipeline automatically generates high-quality light and dark theme visualizations. Here are the core results from the benchmark:
+
+#### Accuracy and Error Rates
+<p align="center">
+  <img src="results/plots/light/accuracy_comparison.png" width="48%">
+  <img src="results/plots/light/cer_comparison.png" width="48%">
+</p>
+
+#### Multi-dimensional Performance
+<p align="center">
+  <img src="results/plots/dark/radar_comparison.png" width="48%">
+  <img src="results/plots/dark/heatmap_comparison.png" width="48%">
+</p>
+
+#### Precision, Recall, F1 and Speed
+<p align="center">
+  <img src="results/plots/light/prf1_comparison.png" width="48%">
+  <img src="results/plots/light/inference_time_comparison.png" width="48%">
+</p>
+
+*For the full PDF report and LaTeX tables, please refer to the `results/exports/` and `results/tables/` directories.*
+
 ## Project Structure
 
 ```
